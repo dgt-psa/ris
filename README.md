@@ -1,5 +1,5 @@
 
-# Webservice para la clasificación de imágenes de scanners de equipaje
+# Webservice para la clasificación de imágenes de scanners
 
 Proyecto de investigacion y desarrollo, actualmente en curso, de la Dirección de Gestión Tecnológica (DGT) de la Polícia de Seguridad Aeroportuaria (PSA). Dados los importantes avances recientes en el reconocimiento de imágenes computarizado, y la disponibilidad de software libre que facilita la aplicación práctica de estas técnicas, el proyecto propone la implementación de un sistema que, conectado al equipamiento de rayos-x para el escaneo de equipaje actualmente utilizado por la PSA, tendrá por objetivo principal reconocer automáticamente imágenes obtenidas desde los scanners para alertar al operador acerca imágenes identificadas como amenazas (artefactos explosivos, armas de fuego, armas blancas, etc.)
 Aunque desde hace años existe literatura específica, es decir, papers que tratan acerca del reconocimiento de imágenes de rayos en busca de amenazas como las citadas más arriba, los datasets o conjuntos de imágenes utilizados en la mayoría de esas publicaciones, son reservados. Otro factor que dificulta repetir los experimientos publicados es contar el software necesario o la capacidad de desarrollarlo.
@@ -24,7 +24,7 @@ $ cd ris
 $ virtualenv --system-site-packages venv
 $ source venv/bin/activate
 (venv)$ pip install --upgrade pip
-(venv)$ pip install --upgrade tensorflow
+(venv)$ pip install tensorflow
 ```
 
 ### Instalación del resto de dependencias del webservice
@@ -34,16 +34,6 @@ $ source venv/bin/activate
 (venv)$ pip install gunicorn
 (venv)$ pip install pillow
 ```
-
-### Instalación de los modelos 
-
-Para utilizar el modelo inception, original de google, de acuerdo a lo indicado en
-
-https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/label_image
-
-Debe descargarse
-
-https://storage.googleapis.com/download.tensorflow.org/models/inception_v3_2016_08_28_frozen.pb.tar.gz
 
 ### Arranque del webservice
 
@@ -105,7 +95,7 @@ Converted 2 variables to const ops.
 (venv)$
 ```
 
-Si en cambio se especificaran 5000 pasos de entrenamiento (en lugar de 500), la salida 
+Si en cambio se especificaran 5000 pasos de entrenamiento (en lugar de 500), la salida se parecerá más a lo que sigue:
 
 ```
 [...]
@@ -142,7 +132,9 @@ Capturas de pantalla de la pagina demo para probar funcionamiento del webservice
 ## Autores
 
 Lic. Ariel Maiorano <amaiorano@psa.gob.ar>
+
 Ing. Pablo Lázaro <plazaro@psa.gob.ar>
+
 Dirección de Gestión Tecnológica (DGT) de la Polícia de Seguridad Aeroportuaria (PSA)
 
 ## Contributentes
@@ -165,10 +157,9 @@ Como fuera mencionado, éste se trata de un proyecto de investigacion y desarrol
 
 EL SOFTWARE SE PROPORCIONA "TAL COMO ESTÁ", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O IMPLÍCITA. EN NINGÚN CASO, LOS AUTORES SERÁN RESPONSABLES DE CUALQUIER RECLAMACIÓN, DAÑO U OTRA RESPONSABILIDAD, QUE SURJA DE O EN RELACIÓN CON EL SOFTWARE O EL USO DEL MISMO.
 
-## Referencias generales
+## Fuentes y referencias
 
-Código fuente, imágenes, descripciones, ideas, etc. utilzados en el proyecto:
-
+```
 https://www.tensorflow.org/get_started/
 https://www.tensorflow.org/get_started/mnist/beginners
 https://www.tensorflow.org/get_started/mnist/pros
@@ -198,6 +189,4 @@ https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/image_r
 https://github.com/tensorflow/models/tree/master/slim
 https://github.com/hetaoaoao/tensorflow_web_deploy
 https://github.com/aymericdamien/TensorFlow-Examples
-
-
-
+```
